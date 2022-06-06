@@ -47,8 +47,7 @@ function generatePassword() {
     else if (lowerConfirm && upperConfirm && numConfirm) {
       usersChoices = lowerCase.concat(upperCase, numbers);
       console.log(usersChoices)
-    }
-    else if (lowerConfirm && upperConfirm && symbolConfirm) {
+    } else if (lowerConfirm && upperConfirm && symbolConfirm) {
       usersChoices = lowerCase.concat(upperCase, symbols);
       console.log(usersChoices)
     } else if (lowerConfirm && numConfirm && symbolConfirm) {
@@ -60,8 +59,40 @@ function generatePassword() {
     }
 
     // If only two of the options are selected.
+    else if (lowerConfirm && upperConfirm) {
+      usersChoices = lowerCase.concat(upperCase);
+      console.log(usersChoices);
+    } else if (lowerConfirm && numConfirm) {
+      usersChoices = lowerCase.concat(numbers);
+      console.log(usersChoices);
+    } else if (lowerConfirm && symbolConfirm) {
+      usersChoices = lowerCase.concat(symbols);
+      console.log(usersChoices);
+    } else if (upperConfirm && numConfirm) {
+      usersChoices = upperCase.concat(numbers);
+      console.log(usersChoices);
+    } else if (upperConfirm && symbolConfirm) {
+      usersChoices = upperCase.concat(symbols);
+      console.log(usersChoices);
+    } else if (numConfirm && symbolConfirm) {
+      usersChoices = numbers.concat(symbols);
+      console.log(usersChoices);
+    } 
 
-
+    // If only one of the options are selected.
+    else if (lowerConfirm) {
+      usersChoices = lowerCase;
+      console.log(usersChoices);
+    } else if (upperConfirm) {
+      usersChoices = upperCase;
+      console.log(usersChoices);
+    } else if (numConfirm) {
+      usersChoices = numbers;
+      console.log(usersChoices);
+    } else if (symbolConfirm) {
+      usersChoices = lowerCase;
+      console.log(symbols);
+    }
   
   // var lowerCase = window.confirm('Would you like to include lowercase letters?');
   // if (lowerCase.confirm === true)
