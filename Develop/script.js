@@ -3,15 +3,15 @@ var lowerConfirm;
 var upperConfirm;
 var numConfirm;
 var symbolConfirm;
+var usersChoices;
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
-var charSet = {
-  lowerCase: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
-  upperCase: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
-  numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-  symbols: ['!','"','#','$','%','&','(',')','*','+']
-};
+var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+var symbols = ['!','"','#','$','%','&','(',')','*','+'];
+
 
 function generatePassword() {
   promptLength = window.prompt('How many characters would you like your password to include?');
@@ -33,7 +33,16 @@ function generatePassword() {
       console.log("You've chosen to include " + numConfirm);
       symbolConfirm = window.confirm('Would you like to include symbols?');
       console.log("You've chosen to include " + symbolConfirm);
-    }
+    };
+
+    // If prompts aren't answered
+    if (!lowerConfirm && !upperConfirm && !numConfirm && !symbolConfirm) {
+      window.alert("A strong password includes at least two of these criteria!");
+    } else if (lowerConfirm && upperConfirm && numConfirm && symbolConfirm) {
+      usersChoices = lowerCase.concat(upperCase, numbers, symbols);
+      console.log(usersChoices)
+    };
+
 
   
   // var lowerCase = window.confirm('Would you like to include lowercase letters?');
