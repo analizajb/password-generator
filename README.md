@@ -7,7 +7,7 @@ This page will help you generate a strong password. Requirements of a strong pas
 * JavaScript
 
 ## Live URL:
-...
+file:///C:/Users/Home/OneDrive/Desktop/projects/password-generator/Develop/index.html
 
 ## Made By:
 Analiza Boehning
