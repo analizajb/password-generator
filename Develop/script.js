@@ -41,7 +41,25 @@ function generatePassword() {
     } else if (lowerConfirm && upperConfirm && numConfirm && symbolConfirm) {
       usersChoices = lowerCase.concat(upperCase, numbers, symbols);
       console.log(usersChoices)
-    };
+    }
+
+    // If only three of the options are selected.
+    else if (lowerConfirm && upperConfirm && numConfirm) {
+      usersChoices = lowerCase.concat(upperCase, numbers);
+      console.log(usersChoices)
+    }
+    else if (lowerConfirm && upperConfirm && symbolConfirm) {
+      usersChoices = lowerCase.concat(upperCase, symbols);
+      console.log(usersChoices)
+    } else if (lowerConfirm && numConfirm && symbolConfirm) {
+      usersChoices = lowerCase.concat(numbers, symbols);
+      console.log(usersChoices)
+    } else if (upperConfirm && numConfirm && symbolConfirm) {
+      usersChoices = upperCase.concat(numbers, symbols);
+      console.log(usersChoices)
+    }
+
+    // If only two of the options are selected.
 
 
   
