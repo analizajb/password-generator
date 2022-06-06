@@ -1,5 +1,8 @@
 // Assignment code here
-
+var lowerConfirm;
+var upperConfirm;
+var numConfirm;
+var symbolConfirm;
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -22,8 +25,15 @@ function generatePassword() {
       console.log("You've chosen " + promptLength + " characters.");
       return generatePassword();
     } else {
+      lowerConfirm = window.confirm('Would you like to include lowercase letters?');
+
+      upperConfirm = window.confirm('Would you like to include uppercase letters?');
       
+      numConfirm = window.confirm('Would you like to include numbers?');
+
+      symbolConfirm = window.confirm('Would you like to include symbols?');
     }
+
   
   // var lowerCase = window.confirm('Would you like to include lowercase letters?');
   // if (lowerCase.confirm === true)
