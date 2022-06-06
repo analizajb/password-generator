@@ -26,12 +26,13 @@ function generatePassword() {
       return generatePassword();
     } else {
       lowerConfirm = window.confirm('Would you like to include lowercase letters?');
-
+      console.log("You've chosen to include " + lowerConfirm);
       upperConfirm = window.confirm('Would you like to include uppercase letters?');
-      
+      console.log("You've chosen to include " + upperConfirm);
       numConfirm = window.confirm('Would you like to include numbers?');
-
+      console.log("You've chosen to include " + numConfirm);
       symbolConfirm = window.confirm('Would you like to include symbols?');
+      console.log("You've chosen to include " + symbolConfirm);
     }
 
   
