@@ -12,6 +12,7 @@ var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'
 var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 var symbols = ['!','"','#','$','%','&','(',')','*','+'];
 
+let passwordToBe = [];
 
 function generatePassword() {
   promptLength = window.prompt('How many characters would you like your password to include?');
@@ -93,24 +94,12 @@ function generatePassword() {
       usersChoices = lowerCase;
       console.log(symbols);
     }
-  
-  // var lowerCase = window.confirm('Would you like to include lowercase letters?');
-  // if (lowerCase.confirm === true)
- 
 
-  
-  // 1. PROMPT USER
-  //    - length of password: 8-128 characters
-  //    - lowercase, uppercase, numbers, special characters
-  // 2. VALIDATE INPUT
-  //    - at least one character type should be selected
-  // 3. GENERATE PASSWORD
-  // 4. RETURN PASSWORD
-  
+    for (var i = 0; i < promptLength; i++) {
+      passwordToBe = usersChoices[Math.floor(Math.random() * usersChoices.length)];
+    }
+     return passwordToBe;
 
-  console.log("Button was clicked!");
-
-  return (password);
 }
 
 // Write password to the #password input
