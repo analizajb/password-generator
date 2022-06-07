@@ -41,7 +41,7 @@ function generatePassword() {
       console.log("You've chosen to include " + symbolConfirm);
     };
 
-    // If prompts aren't answered
+    // If prompts are NOT answered
     if (!lowerConfirm && !upperConfirm && !numConfirm && !symbolConfirm) {
       window.alert("A strong password includes at least two of these criteria!");
     } else if (lowerConfirm && upperConfirm && numConfirm && symbolConfirm) {
@@ -100,23 +100,34 @@ function generatePassword() {
       console.log(symbols);
     }
 
-    // ================================================
+    // ========= THIS SECTION HANDLES THE ACTUAL GENERATION OF THE PASSWORD ============
+
     // Need an array that will be used in the for loop
     // This array will store those characters randomly selected
     // Note: characters are randomly selected based on the users input in the prompts. 
     let passwordToBe = [];
 
+    // In this for loop promptLength is reintroduced
     for (var i = 0; i < promptLength; i++) {
+
+      // Creating allInput to hold the value that the following math functions will produce
       var allInput = usersChoices[Math.floor(Math.random() * usersChoices.length)];
+
+      // Using the passwordToBe to hold the info from allInput and pushing it into passwordToBe
       passwordToBe.push(allInput);
+
+      // To ensure we are getting values from the math functions
       console.log(allInput);
-      // return allInput;
+    
     };
+    // ======= THIS SECTION IS ALL ABOUT RETURNING PASSWORD ONTO THE SCREEN =========
 
     // This returns the password onto the screen for the user to see.
+    // Making a new variable and turning what was generated from the for loop,
+    // pushed into passwordToBe, 
+    // to show on screen as a string.
     var userPassword = passwordToBe.join("");
     return userPassword;
-
 
 };
 
