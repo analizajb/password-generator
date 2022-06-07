@@ -12,7 +12,6 @@ var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'
 var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 var symbols = ['!','"','#','$','%','&','(',')','*','+'];
 
-let passwordToBe = [];
 
 function generatePassword() {
   promptLength = window.prompt('How many characters would you like your password to include?');
@@ -95,12 +94,14 @@ function generatePassword() {
       console.log(symbols);
     }
 
-    for (var i = 0; i < promptLength; i++) {
-      passwordToBe = usersChoices[Math.floor(Math.random() * usersChoices.length)];
-    }
-     return passwordToBe;
+    let passwordToBe = [];
 
-}
+    for (var i = 0; i < promptLength; i++) {
+      var allInput = usersChoices[Math.floor(Math.random() * usersChoices.length)];
+      passwordToBe.push(allInput);
+      console.log(allInput);
+    };
+};
 
 // Write password to the #password input
 function writePassword() {
