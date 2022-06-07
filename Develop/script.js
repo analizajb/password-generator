@@ -14,16 +14,22 @@ var symbols = ['!','"','#','$','%','&','(',')','*','+'];
 
 
 function generatePassword() {
+  // Prompts will be shown on the screen that requires user input
+
+  // First criteria to be answered: password length
   promptLength = window.prompt('How many characters would you like your password to include?');
   console.log("You've chosen " + promptLength + " characters.");
-    // validate prompt is answered
+
+    // This will validate if prompt is answered.
     if (!promptLength) {
       window.alert("Please enter a number between 8 and 128!");
       return generatePassword();
+      // If the prompt is answered but does NOT meet the 8-128 character length.
     } else if (promptLength < 8 || promptLength > 128) {
       window.alert("Please enter a number between 8 and 128!");
       console.log("You've chosen " + promptLength + " characters.");
       return generatePassword();
+      // If all of the prompts are successfully answered 
     } else {
       lowerConfirm = window.confirm('Would you like to include lowercase letters?');
       console.log("You've chosen to include " + lowerConfirm);
@@ -94,13 +100,24 @@ function generatePassword() {
       console.log(symbols);
     }
 
+    // ================================================
+    // Need an array that will be used in the for loop
+    // This array will store those characters randomly selected
+    // Note: characters are randomly selected based on the users input in the prompts. 
     let passwordToBe = [];
 
     for (var i = 0; i < promptLength; i++) {
       var allInput = usersChoices[Math.floor(Math.random() * usersChoices.length)];
       passwordToBe.push(allInput);
       console.log(allInput);
+      // return allInput;
     };
+
+    // This returns the password onto the screen for the user to see.
+    var userPassword = passwordToBe.join("");
+    return userPassword;
+
+
 };
 
 // Write password to the #password input
