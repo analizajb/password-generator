@@ -17,8 +17,8 @@ This page will help you generate a strong password. Requirements of a strong pas
 * Pseudocoding
 
 ## License
-  MIT License
-  (https://opensource.org/licenses/MIT)
+MIT License
+(https://opensource.org/licenses/MIT)
 
 ## Live URL:
 https://analizajb.github.io/password-generator/
